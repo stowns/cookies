@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/stowns/cookies/issues"
   },
-  "homepage": "https://github.com/stowns/cookies"
+  "homepage": "https://github.com/stowns/cookies",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-es6-transpiler": "^1.0.1"
+  }
 }

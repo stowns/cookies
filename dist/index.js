@@ -1,12 +1,12 @@
 import _ from 'lodash';
 
-class Cookies {
+var Cookies = (function(){"use strict";var PRS$0 = (function(o,t){o["__proto__"]={"a":t};return o["a"]===t})({},{});var DP$0 = Object.defineProperty;var GOPD$0 = Object.getOwnPropertyDescriptor;var MIXIN$0 = function(t,s){for(var p in s){if(s.hasOwnProperty(p)){DP$0(t,p,GOPD$0(s,p));}}return t};var proto$0={};
 
-  constructor(config) {
+  function Cookies(config) {
     this.conf = config;
-  }
+  }DP$0(Cookies,"prototype",{"configurable":false,"enumerable":false,"writable":false});
 
-  getCookie(name) {
+  proto$0.getCookie = function(name) {
     // get our session AND base64 decode the value
     if (_.isEmpty(document.cookie)) { return null; }
 
@@ -17,9 +17,9 @@ class Cookies {
     var parsed = JSON.parse(cookie);
     
     return parsed;
-  }
+  };
 
-  parseCookie(){
+  proto$0.parseCookie = function(){
     var str = document.cookie.split(', ');
     var result = {};
     for (var i = 0; i < str.length; i++) {
@@ -28,7 +28,7 @@ class Cookies {
     }
 
     return result;
-  }
-}
+  };
+MIXIN$0(Cookies.prototype,proto$0);proto$0=void 0;return Cookies;})();
 
 module.exports = Cookies;
