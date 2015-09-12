@@ -1,0 +1,22 @@
+{
+  "name": "cookies",
+  "version": "1.0.0",
+  "description": "helper for parsing json cookies, base64 or plaintext",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stowns/cookies.git"
+  },
+  "keywords": [
+    "cookies"
+  ],
+  "author": "Simon Townsend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stowns/cookies/issues"
+  },
+  "homepage": "https://github.com/stowns/cookies"
+}
