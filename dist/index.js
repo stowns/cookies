@@ -1,34 +1,55 @@
-import _ from 'lodash';
+'use strict';
 
-var Cookies = (function(){"use strict";var PRS$0 = (function(o,t){o["__proto__"]={"a":t};return o["a"]===t})({},{});var DP$0 = Object.defineProperty;var GOPD$0 = Object.getOwnPropertyDescriptor;var MIXIN$0 = function(t,s){for(var p in s){if(s.hasOwnProperty(p)){DP$0(t,p,GOPD$0(s,p));}}return t};var proto$0={};
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var Cookies = (function () {
   function Cookies(config) {
+    _classCallCheck(this, Cookies);
+
     this.conf = config;
-  }DP$0(Cookies,"prototype",{"configurable":false,"enumerable":false,"writable":false});
+  }
 
-  proto$0.getCookie = function(name) {
-    // get our session AND base64 decode the value
-    if (_.isEmpty(document.cookie)) { return null; }
+  _createClass(Cookies, [{
+    key: 'getCookie',
+    value: function getCookie(name) {
+      // get our session AND base64 decode the value
+      if (_lodash2['default'].isEmpty(document.cookie)) {
+        return null;
+      }
 
-    var cookieObj = this.parseCookie();
-    if (_.isNull(cookieObj)[name]) { return null; }
+      var cookieObj = this.parseCookie();
+      if (_lodash2['default'].isNull(cookieObj)[name]) {
+        return null;
+      }
 
-    var cookie = this.conf.base64 ? new Buffer(cookieObj[name], 'base64').toString() : cookieObj[name];
-    var parsed = JSON.parse(cookie);
-    
-    return parsed;
-  };
+      var cookie = this.conf.base64 ? new Buffer(cookieObj[name], 'base64').toString() : cookieObj[name];
+      var parsed = JSON.parse(cookie);
 
-  proto$0.parseCookie = function(){
-    var str = document.cookie.split(', ');
-    var result = {};
-    for (var i = 0; i < str.length; i++) {
+      return parsed;
+    }
+  }, {
+    key: 'parseCookie',
+    value: function parseCookie() {
+      var str = document.cookie.split(', ');
+      var result = {};
+      for (var i = 0; i < str.length; i++) {
         var cur = str[i].split('=');
         result[cur[0]] = cur[1];
-    }
+      }
 
-    return result;
-  };
-MIXIN$0(Cookies.prototype,proto$0);proto$0=void 0;return Cookies;})();
+      return result;
+    }
+  }]);
+
+  return Cookies;
+})();
 
 module.exports = Cookies;
