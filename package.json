@@ -2,7 +2,7 @@
   "name": "cookies",
   "version": "1.0.0",
   "description": "helper for parsing json cookies, base64 or plaintext",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
