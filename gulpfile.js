@@ -1,8 +1,8 @@
 var gulp = require('gulp');
-var es6transpiler = require('gulp-es6-transpiler');
+var babel = require('gulp-babel');
  
 gulp.task('default', function () {
     return gulp.src('index.js')
-        .pipe(es6transpiler())
+        .pipe(babel())
         .pipe(gulp.dest('dist'));
 });
